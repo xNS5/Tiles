@@ -38,7 +38,7 @@ if [ ${#tiles} -eq 0 ]; then
          adb shell "settings get secure sysui_qs_tiles" > $path/tiles.txt
          echo "Created text file. Please re-start this program to load quicktiles"
          exit 0
-   elif [ $ans ==  "N" ] || [ $ans == "Y" ] && [ $? -ne 3]; then
+   elif [ $ans ==  "N" ] || [ $ans == "Y" ] && [ $? -ne 3 ]; then
 	   echo "Device is not connected"
        exit 0
    fi
