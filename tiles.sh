@@ -34,12 +34,12 @@ if [ ${#tiles} -eq 0 ]; then
    read -p "Do you want to create the file? (Y || N) " ans
    shopt -s nocasematch
    getLines
-	if [ $ans -eq "Y" ] && [ $?-eq 3 ]; then
+	if [ $ans == "Y" ] && [ $? -eq 3 ]; then
          adb shell "settings get secure sysui_qs_tiles" > $path/tiles.txt
          echo "Created text file. Please re-start this program to load quicktiles"
          exit 0
-	elif [ $ans -eq "N" ] || [ $ans -eq "Y" ] && [ $? -ne 3]; then
-	echo "Device is not connected"
+   elif [ $ans ==  "N" ] || [ $ans -eq "Y" ] && [ $? -ne 3]; then
+	   echo "Device is not connected"
        exit 0
    fi
 fi
